@@ -1,1 +1,101 @@
-<p>home-page works!</p>
+<div class="hp-container">
+  <h2 class="hp-container__hello">Olá, Professor</h2>
+
+  <div class="hp-container__class-list">
+
+    <div class="hp-container__class-list__title">
+      <h3 class="hp-container__class-list__title__text">Localizar Classes</h3>
+      <h3 class="hp-container__class-list__title__text">Data:24/03/2021</h3>
+    </div>
+
+    <div class="hp-container__class-list__cards">
+      <!-- Card de classes, aplicar *ngFor apagar o de baixo quando tiver com o ngFor-->
+      <div class="hp-container__class-list__cards__card">
+        <p class="hp-container__class-list__cards__card__title">5º A - Manhã</p>
+        <p class="hp-container__class-list__cards__card__hour">7:10 - 9:10</p>
+      </div>
+      <!-- Fim do card de classes -->
+      <div class="hp-container__class-list__cards__card-active">
+        <p class="hp-container__class-list__cards__card__title">5º A - Manhã</p>
+        <p class="hp-container__class-list__cards__card__hour">7:10 - 9:10</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hp-container__class-details">
+    <div class="hp-container__class-details__class-list">
+      <h3>Turma 5º A - Manhã - 7:10h as 9:10h</h3>
+      <div class="hp-container__class-details__class-list__table">
+        <div class="hp-container__class-details__class-list__table__header">
+          <p>Registro de presença</p>
+          <p>Total de Alunos: 25</p>
+        </div>
+        <div class="hp-container__class-details__class-list__table__items">
+          <!-- Card de aluno na tabela aplicar *ngFor apagar o de baixo quando tiver o ngFor-->
+          <div class="hp-container__class-details__class-list__table__items__item">
+            <div class="hp-container__class-details__class-list__table__items__item__student">
+              <div class="hp-container__class-details__class-list__table__items__item__student__img">
+                <!-- <img src="" alt=""> -->
+              </div>
+              <p>Nicole Mattes</p>
+            </div>
+            <div class="hp-container__class-details__class-list__table__items__item__button">
+              <!-- Usar ng class para definir a classe como ativa ou não e alterar no obj do aluno dentro do array-->
+              <div class="hp-container__class-details__class-list__table__items__item__button__option">
+                <p>não</p>
+              </div>
+              <div class="hp-container__class-details__class-list__table__items__item__button__option-active">
+                <p>sim</p>
+              </div>
+            </div>
+          </div>
+          <!-- Fim do card de aluno na tabela -->
+        </div>
+      </div>
+    </div>
+
+    <div class="hp-container__class-details__stats">
+      <div class="hp-container__class-details__stats__table">
+        <div class="hp-container__class-details__stats__table__header">
+          <h4>Estatísticas de presença - Hoje</h4>
+        </div>
+        <div class="hp-container__class-details__stats__table__items">
+          <div class="hp-container__class-details__stats__table__items__item">
+            <div class="hp-container__class-details__stats__table__items__item__logo">
+              <img src="assets/home-page/Icon-check-circle.svg" alt="">
+            </div>
+            <div class="hp-container__class-details__stats__table__items__item__texts">
+              <p>total de faltas</p>
+              <p>3</p>
+            </div>
+          </div>
+          <div class="hp-container__class-details__stats__table__items__item">
+            <div class="hp-container__class-details__stats__table__items__item__logo">
+              <img src="assets/home-page/Icon-students.svg" alt="">
+            </div>
+            <div class="hp-container__class-details__stats__table__items__item__texts">
+              <p>Alunos</p>
+              <p>22</p>
+            </div>
+          </div>
+          <div class="hp-container__class-details__stats__table__items__item">
+            <div class="hp-container__class-details__stats__table__items__item__logo">
+              <img src="assets/home-page/Icon-star.svg" alt="">
+            </div>
+            <div class="hp-container__class-details__stats__table__items__item__texts">
+              <p>Presença</p>
+              <p>77%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hp-container__class-details__stats__table__button-container">
+          <div class="hp-container__class-details__stats__table__button-container__button">
+            <p>Finalizar chamada!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

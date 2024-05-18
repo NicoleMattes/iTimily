@@ -1,1 +1,63 @@
-<p>resume-page works!</p>
+<div class="r-container">
+  <div class="r-container__title">
+    <h2>Relatório Geral - 1º e 2º Semestre</h2>
+    <input type="text" placeholder="Procurar um aluno">
+  </div>
+
+  <div class="r-container__menu">
+    <mat-form-field appearance="outline">
+      <mat-label>Selecione uma Turma</mat-label>
+      <mat-select>
+        <mat-option value="5aM">5º A - Manhã</mat-option>
+        <mat-option value="5aT">5º A - Tarde</mat-option>
+        <mat-option value="6aM">6º A - Manhã</mat-option>
+        <mat-option value="6aT">6º A - Tarde</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="r-container__menu__import-btns">
+      <div class="r-container__menu__import-btns__btn">
+        <p>Importar XML</p>
+      </div>
+      <div class="r-container__menu__import-btns__btn">
+        <p>Importar PDF</p>
+      </div>
+    </div>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nome</th>
+      <td mat-cell *matCellDef="let student"> {{student.name}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="totalAbseces">
+      <th mat-header-cell *matHeaderCellDef>Total de Faltas</th>
+      <td mat-cell *matCellDef="let student"> {{student.totalAbseces}}% </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="totalPresence">
+      <th mat-header-cell *matHeaderCellDef>Total de Presenças</th>
+      <td mat-cell *matCellDef="let student"> {{student.totalPresence}}% </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let student">
+        <p [ngClass]="{
+          'approved': (student.status === 'Aprovada' || student.status === 'Aprovado'),
+          'reproved': (student.status === 'Reprovada' || student.status === 'Reprovado'),
+        }" >{{student.status}}</p>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

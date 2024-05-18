@@ -1,0 +1,362 @@
+.sp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sp-container__classes-resume {
+  margin: 2em 3em 0 5em;
+}
+
+.sp-container__classes-resume__my-classes {
+  margin-bottom: 1em;
+}
+
+.sp-container__classes-resume__my-classes__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sp-container__classes-resume__my-classes__title h3 {
+  color: #5d5d5b;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+.sp-container__classes-resume__my-classes__title p {
+  color: #5d5d5b;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.sp-container__classes-resume__my-classes__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1em;
+  overflow-x: scroll;
+  width: 670px;
+}
+
+.sp-container__classes-resume__my-classes__list__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  margin-right: 1em;
+  padding: .7em 1em;
+  min-width: 120px;
+}
+
+.sp-container__classes-resume__my-classes__list__card-active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #e5ea1d;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  padding: .7em 1em;
+  cursor: pointer;
+  margin-right: 1em;
+  min-width: 120px;
+}
+
+.sp-container__classes-resume__my-classes__list__card__title {
+  color: #1d1d1f;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sp-container__classes-resume__my-classes__list__card__hour {
+  color: #1d1d1f;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sp-container__classes-resume__students-list__title h3{
+  color: #1d1d1f;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.sp-container__classes-resume__students-list__list {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  width: 670px;
+  height: 600px;
+  margin-top: 1em;
+  overflow-y: scroll;
+}
+
+.sp-container__classes-resume__students-list__list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 43px;
+  background-color: #e5ea1d;
+  border-radius: 12px;
+}
+
+.sp-container__classes-resume__students-list__list__header__title {
+  color: #1d1d1f;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-left: 1em;
+}
+
+.sp-container__classes-resume__students-list__list__header__total {
+  color: #1d1d1f;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-right: 1em;
+}
+
+.sp-container__classes-resume__students-list__list__student {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: ease-in-out .2s;
+}
+.sp-container__classes-resume__students-list__list__student:hover {
+  background-color: #c4c4c4;
+}
+
+.sp-container__classes-resume__students-list__list__student__detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sp-container__classes-resume__students-list__list__student__detail__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 1em;
+  background-color: gray;
+}
+
+.sp-container__classes-resume__students-list__list__student__detail h3 {
+  color: #030303;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.sp-container__classes-resume__students-list__list__student__profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 73px;
+  height: 40px;
+  padding: 0px 8px;
+  border: 1px solid #1d1d1f;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 20px;
+  outline: none;
+  margin-right: 1em;
+}
+
+
+.sp-container__student-resume {
+  height: 100vh;
+}
+
+.sp-container__student-resume__details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sp-container__student-resume__details__image {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: gray;
+  margin-right: 1em;
+  margin-top: 2em;
+}
+
+.sp-container__student-resume__details__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+
+.sp-container__student-resume__details__info p {
+  color: #1d1d1f;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.sp-container__student-resume__details__info__with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .7em;
+}
+
+.sp-container__student-resume__details__info__with-icon img {
+  width: 16px;
+  height: 16px;
+  margin-right: 1em;
+}
+
+.sp-container__student-resume__details__info__with-icon p {
+  color: #1d1d1f;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  margin: 0;
+}
+
+.sp-container__student-resume__stats h3{
+  color: #1d1d1f;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 1em 0;
+}
+
+.sp-container__student-resume__stats__cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 600px;
+}
+
+.sp-container__student-resume__stats__cards__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 263px;
+  height: 150px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.sp-container__student-resume__stats__cards__card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 242px;
+  height: 64px;
+  background-color: #e5ea1d;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.sp-container__student-resume__stats__cards__card p{
+  color: #030303;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sp-container__student-resume__stats-details {
+  margin: 2em;
+}
+
+.sp-container__student-resume__stats-details__titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sp-container__student-resume__stats-details__titles p{
+  color: #1d1d1f;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.sp-container__student-resume__stats-details__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  margin-top: .4em;
+  text-align: left;
+}
+
+.sp-container__student-resume__stats-details__info p{
+  color: #030303;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: left;
+}
+
+.sp-container__student-resume__calc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.sp-container__student-resume__calc p{
+  color: #030303;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@media only screen and (max-width: 920px){
+  .sp-container__classes-resume{
+    margin-left: 40px;
+  }
+}
+
+@media only screen and (max-width: 860px){
+  .sp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .sp-container__student-resume,
+  .sp-container__classes-resume__students-list__list,
+  .sp-container__classes-resume__my-classes__title,
+  .sp-container__classes-resume__my-classes__list,
+  .sp-container__student-resume__stats__cards{
+    width: 500px;
+  }
+  .sp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sp-container__student-resume__stats__cards__card{
+    width: 200px;
+  }
+  .sp-container__student-resume__stats__cards__card__icon{
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 860px){
+
+}

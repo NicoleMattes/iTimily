@@ -10,35 +10,25 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
-  },
-  {
+  },{
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },  {
     path: 'call-page',
-    loadChildren: () => import('./pages/call-page/call-page.module').then(m => m.CallPageModule),
-    canActivate: [AuthGuard] 
+    component: CallPageComponent,
   },
   {
     path: 'home-page',
-    loadChildren: () => import('./pages/home-page/home-page.module').then(m => m.HomePageModule),
-    canActivate: [AuthGuard] 
+    component: HomePageComponent,
   },
   {
     path: 'resume-page',
-    loadChildren: () => import('./pages/resume-page/resume-page.module').then(m => m.ResumePageModule),
-    canActivate: [AuthGuard] 
+    component: ResumePageComponent,
   },
   {
-    path: 'student-profile-page',
-    loadChildren: () => import('./pages/student-profile-page/student-profile-page.module').then(m => m.StudentProfilePageModule),
-    canActivate: [AuthGuard] 
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: '/login' // Redireciona para a página de login se o caminho for vazio
-  },
-  { 
-    path: '**', 
-    redirectTo: '/login' // Redireciona para a página de login se a rota não for encontrada
+    path: 'students-page',
+    loadChildren: () => import('./pages/student-profile-page/student-profile-page.module').then(m => m.StudentProfilePageModule)
   }
 ];
 

@@ -1,0 +1,88 @@
+.r-container {
+  margin: 2em;
+}
+
+.r-container__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.r-container__title h2 {
+  color: #1d1d1f;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.r-container__title input {
+    width: 250px;
+    height: 36px;
+    padding: 0px 8px;
+    border: 1px solid #ccccd1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: rgba(249,249,249,0.86);
+    color: #1d1d1f;
+    font-size: 12px;
+    font-family: "Poppins";
+    line-height: 16px;
+    outline: none;
+}
+
+.r-container__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.r-container__menu__import-btns {
+  display: flex;
+  align-items: center;
+}
+
+.r-container__menu__import-btns__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 177px;
+  height: 32px;
+  padding: 0px 8px;
+  border: 1px solid #1d1d1f;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  font-size: 12px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 16px;
+  outline: none;
+  margin-left: 1em;
+  transition: .3s ease-in-out;
+}
+
+.r-container__menu__import-btns__btn:hover {
+  background-color: #e5ea1d;
+  transition: .3s ease-in-out;
+}
+
+.table {
+  width: 800px;
+}
+
+.approved {
+  color: #4cd964;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+.reproved {
+  color: #ff3b30;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+}

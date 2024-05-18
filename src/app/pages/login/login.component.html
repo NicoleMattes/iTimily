@@ -1,37 +1,78 @@
 <div class="l-container">
-    <div class="l-container__left">
-        <div class="l-container__left__content">
-            <img id="logo" src="../../../assets/login/TELA_LOGIN.svg" alt="">
-            <h1>iTimely é o rastreamento de alunos de forma simples.</h1>
-            <p>Todo o seu gerenciamento de aulas, registro de presença, e relatórios em um só lugar.</p>
-        </div>
+  <div class="l-container__left">
+    <div class="l-container__left__content">
+      <img id="logo" src="../../../assets/login/TELA_LOGIN.svg" alt="" />
+      <h1>iTimely é o rastreamento de alunos de forma simples.</h1>
+      <p>
+        Todo o seu gerenciamento de aulas, registro de presença, e relatórios em
+        um só lugar.
+      </p>
     </div>
-    <div class="l-container__right">
-        <div class="l-container__right__top">
-            <div class="l-container__right__logo">
-            <h1>iTimely</h1>
-            <p>Rastreamento de presença automatizado</p>
-        </div>
-        </div>
-
-        <div class="l-container__right__login">
-            <h1>Login</h1>
-            <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" novalidate>
-                <div class="l-container__right__login--email" [class.has-error]="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
-                    <label>Email:</label>
-                    <input type="email" formControlName="email" class="form-control" placeholder="exemplo@exemplo.com">
-                    <div class="l-container__right__login--email__error" *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error-message">Email é obrigatório</div>
-                </div>
-                <div class="l-container__right__login--password" [class.has-error]="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
-                    <label>Senha:</label>
-                    <input type="password" formControlName="password" class="form-control" placeholder="*********">
-                    <div class="l-container__right__login--password__error" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="error-message">Senha é obrigatória</div>
-                </div>
-                <button type="submit">Login</button>
-                <a href="/esqueceu-senha">Esqueceu a senha?</a>
-            </form>
-            
-        </div>
+  </div>
+  <div class="l-container__right">
+    <div class="l-container__right__top">
+      <div class="l-container__right__logo">
+        <h1>iTimely</h1>
+        <p>Rastreamento de presença automatizado</p>
+      </div>
     </div>
 
+    <div class="l-container__right__login">
+      <h1>Login</h1>
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" novalidate>
+        <div
+          class="l-container__right__login--email"
+          [class.has-error]="
+            loginForm.controls['email'].invalid &&
+            loginForm.controls['email'].touched
+          "
+        >
+          <label>Email:</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="exemplo@exemplo.com"
+          />
+          <div
+            class="l-container__right__login--email__error"
+            *ngIf="
+              loginForm.controls['email'].invalid &&
+              loginForm.controls['email'].touched
+            "
+            class="error-message"
+          >
+            Email é obrigatório
+          </div>
+        </div>
+        <div
+          class="l-container__right__login--password"
+          [class.has-error]="
+            loginForm.controls['password'].invalid &&
+            loginForm.controls['password'].touched
+          "
+        >
+          <label>Senha:</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="*********"
+          />
+          <div
+            class="l-container__right__login--password__error"
+            *ngIf="
+              loginForm.controls['password'].invalid &&
+              loginForm.controls['password'].touched
+            "
+            class="error-message"
+          >
+            Senha é obrigatória
+          </div>
+        </div>
+        <button type="submit">Login</button>
+        <a href="*">Esqueceu a senha?</a>
+      </form>
+    </div>
+  </div>
 </div>

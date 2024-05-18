@@ -1,0 +1,30 @@
+<div class="nav-container" *ngIf="authService.isAuthenticated()">
+  <button class="menu-button" (click)="toggleMenu()">☰</button>
+
+  <div class="nav-content" [class.open]="isMenuOpen">
+    <div class="nav-container__buttons">
+      <div class="nav-container__buttons__home" (click)="goToPage('home-page')">
+        <img src="assets/navigator/Icon-home.svg" alt="" *ngIf="!homeBtnActive">
+        <img src="assets/navigator/Icon-home-yellow.svg" alt="" *ngIf="homeBtnActive">
+      </div>
+      <div class="nav-container__buttons__students" (click)="goToPage('students-page')">
+        <img src="assets/navigator/Icon-students.svg" alt="" *ngIf="!studentsBtnActive">
+        <img src="assets/navigator/Icon-students-yellow.svg" alt="" *ngIf="studentsBtnActive">
+      </div>
+      <div class="nav-container__buttons__profile" (click)="goToPage('resume-page')">
+        <img src="assets/navigator/Icon-feed.svg" alt="" *ngIf="!profileBtnActive">
+        <img src="assets/navigator/Icon-feed-yellow.svg" alt="" *ngIf="profileBtnActive">
+      </div>
+    </div>
+    <div class="nav-container__simple-profile">
+      <div class="nav-container__simple-profile__image">
+        <!-- <img src="" alt=""> -->
+      </div>
+      <div class="nav-container__simple-profile__text">
+        <p class="nav-container__simple-profile__text__name">Elias</p>
+        <p class="nav-container__simple-profile__text__title">Profº Relações Públicas</p>
+      </div>
+    </div>
+  </div>
+</div>
+

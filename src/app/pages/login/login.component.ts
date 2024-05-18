@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginModule } from './login.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/AuthService';
 
 
 @Component({
@@ -14,12 +14,15 @@ export class LoginComponent {
   password: string = '';
   loginForm!: FormGroup;
 
-  constructor(private router: Router, private formBuider: FormBuilder){
+  constructor(private router: Router, private formBuider: FormBuilder, private authService: AuthService){
     this.loginForm= this.formBuider.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required,]]
     })
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.authService.login()
+    this.router.navigate(['students-page'])
+  }
 }

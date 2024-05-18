@@ -1,0 +1,123 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #f0f0f0;
+  /* padding: 2em .3em; */
+}
+
+.nav-container__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 4em;
+  height: 18em;
+}
+
+.nav-container__buttons__home {
+  transition: ease-in-out .3s;
+  cursor: pointer;
+}
+.nav-container__buttons__home img {
+  width: 4em;
+}
+.nav-container__buttons__home:hover {
+  transform: scale(1.2);
+}
+
+.nav-container__buttons__profile {
+  transition: ease-in-out .3s;
+  cursor: pointer;
+}
+.nav-container__buttons__profile img {
+  width: 4em;
+}
+.nav-container__buttons__profile:hover {
+  transform: scale(1.2);
+}
+
+.nav-container__buttons__students {
+  transition: ease-in-out .3s;
+  cursor: pointer;
+}
+.nav-container__buttons__students img{
+  width: 4em;
+}
+.nav-container__buttons__students:hover {
+  transform: scale(1.2);
+}
+
+.nav-container__simple-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2em 1em
+}
+
+.nav-container__simple-profile__image {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: gray;
+  margin-right: 1em;
+}
+
+.nav-container__simple-profile__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.nav-container__simple-profile__text__name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.nav-container__simple-profile__text__title {
+  font-size: 8px;
+}
+
+
+.menu-button {
+  display: none; /* Esconder por padrão */
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+nav {
+  transition: max-height 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+nav.open {
+  max-height: 500px; 
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  nav {
+    display: none; /* Esconder o menu por padrão */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.open {
+    display: block; /* Mostrar o menu quando a classe .open estiver presente */
+  }
+
+}

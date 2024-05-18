@@ -1,1 +1,121 @@
-<p>student-profile-page works!</p>
+<div class="sp-container">
+  <div class="sp-container__classes-resume">
+    <div class="sp-container__classes-resume__my-classes">
+      <div class="sp-container__classes-resume__my-classes__title">
+        <h3>Minhas Turmas</h3>
+        <p>Data:24/03/2021</p>
+      </div>
+      <div class="sp-container__classes-resume__my-classes__list">
+        <!-- card de turma aplicar ngFor -->
+        <div class="sp-container__classes-resume__my-classes__list__card">
+          <span class="sp-container__classes-resume__my-classes__list__card__title">5º A - Manhã</span>
+          <span class="sp-container__classes-resume__my-classes__list__card__hour">7:10 - 9:10</span>
+        </div>
+        <!-- fim card de turma -->
+        <div class="sp-container__classes-resume__my-classes__list__card-active"> <!-- Essa Classe é a de card atio com fundo amarelo -->
+          <span class="sp-container__classes-resume__my-classes__list__card__title">5º A - Manhã</span>
+          <span class="sp-container__classes-resume__my-classes__list__card__hour">7:10 - 9:10</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="sp-container__classes-resume__students-list">
+      <div class="sp-container__classes-resume__students-list__title">
+        <h3>Turma 5º A - Manhã - 7:10h as 9:10h</h3>
+      </div>
+      <div class="sp-container__classes-resume__students-list__list">
+        <div class="sp-container__classes-resume__students-list__list__header">
+          <p class="sp-container__classes-resume__students-list__list__header__title">Lista de Alunos</p>
+          <p class="sp-container__classes-resume__students-list__list__header__total">Total de Alunos: 25</p>
+        </div>
+        <!-- estudantes da lista aplicar ngFor -->
+        <div class="sp-container__classes-resume__students-list__list__student">
+          <div class="sp-container__classes-resume__students-list__list__student__detail">
+            <div class="sp-container__classes-resume__students-list__list__student__detail__image">
+              <!-- <img src="" alt=""> -->
+            </div>
+            <p>Nicole Mattes</p>
+          </div>
+          <div class="sp-container__classes-resume__students-list__list__student__profile-btn">
+            <span class="sp-container__classes-resume__students-list__list__student__profile-btn__span">
+              Perfil
+            </span>
+          </div>
+        </div>
+        <!-- fim do estudante da list -->
+
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-container__student-resume">
+    <div class="sp-container__student-resume__details">
+      <div class="sp-container__student-resume__details__image">
+        <!-- <img src="" alt=""> -->
+      </div>
+      <div class="sp-container__student-resume__details__info">
+        <p>Gabriela Mendes</p>
+        <div class="sp-container__student-resume__details__info__with-icon">
+          <img src="assets/student-profile/Icon-graduate.svg" alt="">
+          <p>5ºA</p>
+        </div>
+        <div class="sp-container__student-resume__details__info__with-icon">
+          <img src="assets/student-profile/Icon-people-outline.svg" alt="">
+          <p>Responsável: Nicole Mendes</p>
+        </div>
+        <div class="sp-container__student-resume__details__info__with-icon">
+          <img src="assets/student-profile/Icon-whatsapp.svg" alt="">
+          <p>Contato: (12) 91234-5678</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-container__student-resume__stats">
+      <h3>Estatíticas de presença - Mensal</h3>
+      <div class="sp-container__student-resume__stats__cards">
+        <div class="sp-container__student-resume__stats__cards__card">
+          <div class="sp-container__student-resume__stats__cards__card__icon">
+            <img src="assets/student-profile/Icon-check-circle.svg" alt="">
+          </div>
+          <p>Total de faltas</p>
+          <p>3</p>
+        </div>
+        <div class="sp-container__student-resume__stats__cards__card">
+          <div class="sp-container__student-resume__stats__cards__card__icon">
+            <img src="assets/student-profile/Icon-check-circle.svg" alt="">
+          </div>
+          <p>Presença média</p>
+          <p>77%</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-container__student-resume__stats-details">
+      <div class="sp-container__student-resume__stats-details__titles">
+        <p>Data de faltas</p>
+        <p>Aula 1</p>
+        <p>Aula 2</p>
+      </div>
+      <div class="sp-container__student-resume__stats-details__info">
+        <p>24/03/2024</p>
+        <p>Falta</p>
+        <p>Presente</p>
+      </div>
+      <div class="sp-container__student-resume__stats-details__info">
+        <p>03/03/2024</p>
+        <p>Presente</p>
+        <p>Falta</p>
+      </div>
+      <div class="sp-container__student-resume__stats-details__info">
+        <p>01/03/2024</p>
+        <p>Falta</p>
+        <p>Presente</p>
+      </div>
+    </div>
+
+    <div class="sp-container__student-resume__calc">
+      <p>Se >= 80% de presença -> não enviar relatório para os pais</p>
+      <p>Se estiver <= 79% -> enviar relatório para os pais</p>
+    </div>
+  </div>
+</div>
