@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   })
   export class AuthService {
 
-    // isLoggedIn: boolean = false; // variável para verificar se o usuário está logado
-    isLoggedIn: boolean = true;
+    isLoggedIn: boolean = false; // variável para verificar se o usuário está logado
+    // isLoggedIn: boolean = true;
 
     constructor() { }
 

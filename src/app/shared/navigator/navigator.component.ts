@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { CompleteUserModel } from 'src/app/models/complete-user.model';
 import { AuthService } from 'src/app/services/AuthService';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-navigator',
@@ -14,8 +16,9 @@ export class NavigatorComponent implements OnInit{
   profileBtnActive = false;
   studentsBtnActive = false;
   isMenuOpen = false;
+  professor!: CompleteUserModel;
 
-  constructor(public authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, private router: Router, private storageService: StorageService) {
 
   }
   toggleMenu() {
@@ -26,9 +29,14 @@ export class NavigatorComponent implements OnInit{
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+      this.getProfessor();
       this.actualRoute = event.url;
       this.activeBtnByRoute();
     });
+  }
+
+  getProfessor() {
+    this.professor = this.storageService.COMPLETE_USER
   }
 
   goToPage(route: string) {
