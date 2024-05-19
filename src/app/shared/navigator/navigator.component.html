@@ -1,4 +1,4 @@
-<div class="nav-container" *ngIf="authService.isAuthenticated()">
+<div class="nav-container" *ngIf="authService.isAuthenticated() && professor">
 
     <div class="nav-container__buttons">
       <div class="nav-container__buttons__home" (click)="goToPage('home-page')">
@@ -19,8 +19,8 @@
         <!-- <img src="" alt=""> -->
       </div>
       <div class="nav-container__simple-profile__text">
-        <p class="nav-container__simple-profile__text__name">Elias</p>
-        <p class="nav-container__simple-profile__text__title">Profº Relações Públicas</p>
+        <p class="nav-container__simple-profile__text__name">{{professor.nomeCompleto}}</p>
+        <p class="nav-container__simple-profile__text__title">Profº {{professor.materia}}</p>
       </div>
     </div>
 </div>

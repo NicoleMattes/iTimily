@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AlunoRelatorio } from 'src/app/models/aluno-relatorio.model';
+import { TurmaModel } from 'src/app/models/turma.model';
+import { StorageService } from 'src/app/services/storage.service';
+import { TurmaService } from 'src/app/services/turma.service';
 
 @Component({
   selector: 'app-resume-page',
@@ -6,22 +10,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume-page.component.css']
 })
 export class ResumePageComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'totalAbseces', 'totalPresence', 'status'];
-  dataSource!: student[];
+  // displayedColumns: string[] = ['name', 'totalAbseces', 'totalPresence', 'status'];
+  displayedColumns: string[] = ['name', 'totalAbseces', 'totalPresence'];
+  dataSource!: AlunoRelatorio[];
   turmas: TurmaModel[] = [];
   selectedTurma!: string;
+  alunos: AlunoRelatorio[] = [];
+
+  constructor(private storageService: StorageService, private turmaService: TurmaService) {}
 
   ngOnInit(): void {
     this.getTurmas()
   }
 
   getTurmas() {
-    this.turmas = TURMAS;
+    this.storageService.COMPLETE_USER.turmas.forEach(turma => {
+      this.turmas.push(turma);
+    });
   }
   
   getStudents(){
-    this.dataSource = STUDENT_DATA
-    alert(this.selectedTurma)
+    if(!this.selectedTurma || this.selectedTurma === null || this.selectedTurma === '') {
+      alert('Turma ainda não cadastrada');
+    } else {
+      this.turmaService.getRelatorio(this.selectedTurma).subscribe({
+        next: data => {
+          data.forEach(aluno => {
+            this.alunos.push(aluno);
+          })
+          this.dataSource = this.alunos;
+        },
+        error: e => console.error(e)
+      })
+    }
   }
 
 }
@@ -31,12 +52,6 @@ interface student {
   totalAbseces: number;
   totalPresence: number;
   status: string;
-}
-
-interface TurmaModel {
-  name: string,
-  id: string,
-  hour: string
 }
 
 const STUDENT_DATA: student[] = [

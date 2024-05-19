@@ -9,7 +9,7 @@
       <mat-form-field appearance="outline" style="margin-right: 1em;">
         <mat-label>Selecione uma Turma</mat-label>
         <mat-select [(ngModel)]="selectedTurma">
-          <mat-option value="{{turma.id}}" *ngFor="let turma of turmas">{{turma.name}}</mat-option>
+          <mat-option value="{{turma.turmaId}}" *ngFor="let turma of turmas">{{turma.turmaNome}}</mat-option>
         </mat-select>
       </mat-form-field>
       <button (click)="getStudents()"
@@ -29,27 +29,27 @@
     </div>
   </div>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" *ngIf="turmas.length > 0">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" *ngIf="alunos.length > 0">
 
     <!-- Position Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Nome</th>
-      <td mat-cell *matCellDef="let student"> {{student.name}} </td>
+      <td mat-cell *matCellDef="let aluno"> {{aluno.nome}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="totalAbseces">
       <th mat-header-cell *matHeaderCellDef>Total de Faltas</th>
-      <td mat-cell *matCellDef="let student"> {{student.totalAbseces}}% </td>
+      <td mat-cell *matCellDef="let aluno"> {{aluno.totalFaltas}}% </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="totalPresence">
       <th mat-header-cell *matHeaderCellDef>Total de Presenças</th>
-      <td mat-cell *matCellDef="let student"> {{student.totalPresence}}% </td>
+      <td mat-cell *matCellDef="let aluno"> {{aluno.totalPresencas}}% </td>
     </ng-container>
 
-    <!-- Symbol Column -->
+    <!--
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>Status</th>
       <td mat-cell *matCellDef="let student">
@@ -58,7 +58,7 @@
           'reproved': (student.status === 'Reprovada' || student.status === 'Reprovado'),
         }" >{{student.status}}</p>
       </td>
-    </ng-container>
+    </ng-container> -->
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

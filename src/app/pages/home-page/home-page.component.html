@@ -6,39 +6,37 @@
     <div class="hp-container__class-list__title">
       <h3 class="hp-container__class-list__title__text">Localizar Classes</h3>
       <h3 class="hp-container__class-list__title__text">Data: {{formatedDate}}</h3>
+      <mat-form-field appearance="outline" style="margin-right: 1em;">
+        <mat-label>Selecione uma Turma</mat-label>
+        <mat-select [(ngModel)]="selectedPeriod">
+          <mat-option value="1º aula">1º Horário</mat-option>
+          <mat-option value="2º aula">2º Horário</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button
+      mat-icon-button aria-label="Example icon button with a home icon"
+      style="margin-bottom: 1em; background-color: #e5ea1d;"
+      (click)="getAlunos()">
+          <mat-icon>search</mat-icon>
+      </button>
     </div>
 
     <div class="hp-container__class-list__cards">
-      <div *ngFor="let turma of turmas">
-        <div [ngClass]="{
-          'hp-container__class-list__cards__card': turma.id !== selectedTurma.id,
-          'hp-container__class-list__cards__card-active': turma.id === selectedTurma.id,
-        }"
-        (click)="selectTurma(turma)">
-          <p class="hp-container__class-list__cards__card__title">{{turma.name}}</p>
-          <p class="hp-container__class-list__cards__card__hour">{{turma.hour}}</p>
-          <p class="hp-container__class-list__cards__card__hour">{{
-            (selectedTurma.hour === '1º Aula' && selectedTurma.name.includes('Manhã'))? '7:00h - 9:00h' :
-            (selectedTurma.hour === '2º Aula' && selectedTurma.name.includes('Manhã'))? '10:00h - 12:00h' :
-            (selectedTurma.hour === '1º Aula' && selectedTurma.name.includes('Tarde'))? '13:00h - 15:00h' :
-            (selectedTurma.hour === '2º Aula' && selectedTurma.name.includes('Tarde'))? '17:00h - 19:00h' :
-            selectedTurma.hour
-          }}</p>
+        <div *ngFor="let turma of turmas">
+          <div [ngClass]="{
+            'hp-container__class-list__cards__card': turma.turmaId !== selectedTurma.turmaId,
+            'hp-container__class-list__cards__card-active': turma.turmaId === selectedTurma.turmaId,
+          }"
+          (click)="selectTurma(turma)">
+            <p class="hp-container__class-list__cards__card__title">{{turma.turmaNome}} {{turma.periodo}}</p>
+          </div>
         </div>
-      </div>
     </div>
-
   </div>
 
-  <div class="hp-container__class-details">
+  <div class="hp-container__class-details" *ngIf="alunos.length > 0">
     <div class="hp-container__class-details__class-list">
-      <h3>Turma {{selectedTurma.name}} - {{
-        (selectedTurma.hour === '1º Aula' && selectedTurma.name.includes('Manhã'))? '7:00h - 9:00h' :
-        (selectedTurma.hour === '2º Aula' && selectedTurma.name.includes('Manhã'))? '10:00h - 12:00h' :
-        (selectedTurma.hour === '1º Aula' && selectedTurma.name.includes('Tarde'))? '13:00h - 15:00h' :
-        (selectedTurma.hour === '2º Aula' && selectedTurma.name.includes('Tarde'))? '17:00h - 19:00h' :
-        selectedTurma.hour
-      }}</h3>
+      <h3>Turma {{selectedTurma.turmaNome}} - {{selectedTurma.periodo}} - {{selectedPeriod}}</h3>
       <div class="hp-container__class-details__class-list__table">
         <div class="hp-container__class-details__class-list__table__header">
           <p>Registro de presença</p>
@@ -48,20 +46,19 @@
           <div class="hp-container__class-details__class-list__table__items__item" *ngFor="let aluno of alunos">
             <div class="hp-container__class-details__class-list__table__items__item__student">
               <div class="hp-container__class-details__class-list__table__items__item__student__img">
-                <!-- <img src="" alt=""> -->
               </div>
-              <p>{{aluno.name}}</p>
+              <p>{{aluno.nome}}</p>
             </div>
             <div class="hp-container__class-details__class-list__table__items__item__button" (click)="changeAlunoPresence(aluno)">
               <div [ngClass]="{
-                'hp-container__class-details__class-list__table__items__item__button__option': aluno.presence,
-                'hp-container__class-details__class-list__table__items__item__button__option-active': !aluno.presence,
+                'hp-container__class-details__class-list__table__items__item__button__option': aluno.presenca,
+                'hp-container__class-details__class-list__table__items__item__button__option-active': !aluno.presenca,
               }">
                 <p>não</p>
               </div>
               <div [ngClass]="{
-                'hp-container__class-details__class-list__table__items__item__button__option': !aluno.presence,
-                'hp-container__class-details__class-list__table__items__item__button__option-active': aluno.presence,
+                'hp-container__class-details__class-list__table__items__item__button__option': !aluno.presenca,
+                'hp-container__class-details__class-list__table__items__item__button__option-active': aluno.presenca,
               }">
                 <p>sim</p>
               </div>
@@ -71,7 +68,7 @@
       </div>
     </div>
 
-    <div class="hp-container__class-details__stats">
+    <div class="hp-container__class-details__stats" *ngIf="alunos.length > 0">
       <div class="hp-container__class-details__stats__table">
         <div class="hp-container__class-details__stats__table__header">
           <h4>Estatísticas de presença - Hoje</h4>
@@ -83,7 +80,7 @@
             </div>
             <div class="hp-container__class-details__stats__table__items__item__texts">
               <p>total de faltas</p>
-              <p>{{totalFaltas}}</p>
+              <p>{{alunosFaltas.length}}</p>
             </div>
           </div>
           <div class="hp-container__class-details__stats__table__items__item">
@@ -93,6 +90,7 @@
             <div class="hp-container__class-details__stats__table__items__item__texts">
               <p>Alunos</p>
               <p>{{alunos.length}}</p>
+              <!-- <p>{{alunos.length}}</p> -->
             </div>
           </div>
           <div class="hp-container__class-details__stats__table__items__item">
@@ -101,7 +99,7 @@
             </div>
             <div class="hp-container__class-details__stats__table__items__item__texts">
               <p>Presença</p>
-              <p>{{porcentagemFaltas}}%</p>
+              <p>{{percPresenca}}%</p>
             </div>
           </div>
         </div>
