@@ -5,15 +5,19 @@
   </div>
 
   <div class="r-container__menu">
-    <mat-form-field appearance="outline">
-      <mat-label>Selecione uma Turma</mat-label>
-      <mat-select>
-        <mat-option value="5aM">5º A - Manhã</mat-option>
-        <mat-option value="5aT">5º A - Tarde</mat-option>
-        <mat-option value="6aM">6º A - Manhã</mat-option>
-        <mat-option value="6aT">6º A - Tarde</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div style="display: flex; align-items: center;">
+      <mat-form-field appearance="outline" style="margin-right: 1em;">
+        <mat-label>Selecione uma Turma</mat-label>
+        <mat-select [(ngModel)]="selectedTurma">
+          <mat-option value="{{turma.id}}" *ngFor="let turma of turmas">{{turma.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button (click)="getStudents()"
+      mat-icon-button aria-label="Example icon button with a home icon"
+      style="margin-bottom: 1em; background-color: #e5ea1d;">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
 
     <div class="r-container__menu__import-btns">
       <div class="r-container__menu__import-btns__btn">
@@ -25,7 +29,7 @@
     </div>
   </div>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" *ngIf="turmas.length > 0">
 
     <!-- Position Column -->
     <ng-container matColumnDef="name">
